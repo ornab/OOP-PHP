@@ -17,6 +17,7 @@ class Buisiness
     
 {
     protected $staff;
+    protected $person;
     
     public function __construct(Staff $staff)
     {
@@ -25,16 +26,23 @@ class Buisiness
         
     }
     
-    protected $person;
+   
     
     public function hire(Person $person) //type hinting
     {
         
-        //$this->person = $person;
+        
         //add $person to staff collection
         
         $this->staff->add($person);
         
+        
+    }
+    
+    public function getStaffMembers()
+    {
+        
+       return $this->staff->members();
         
     }
     
@@ -44,9 +52,22 @@ class Staff
 {
     protected $members = [];
     
+    public function __construct($members = [])
+    {
+        $this->members = $members;
+        
+    }
+    
     public function add(Person $person)
     {
         $this->members[] = $person; 
+        
+    }
+    
+    public function members()
+    {
+        
+       return $this->members;
         
     }
     
@@ -55,10 +76,10 @@ class Staff
 
 $ornab = new Person ('Ornab Ahmed');
 
-$staff = new Staff;
+$staff = new Staff([$ornab]);
 
-$theme_e = new Buisiness($staff);
+$theme = new Buisiness($staff);
 
-$theme_e->hire($ornab);
+$theme->hire(new Person('asif'));
 
-var_dump($staff);
+var_dump($theme->getStaffMembers());
