@@ -1,5 +1,6 @@
 <?php
 
+require 'vendor/autoload.php';
 
 
 $ornab = new Theme_E\Person ('Ornab Ahmed');
