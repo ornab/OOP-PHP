@@ -2,6 +2,8 @@
 
 namespace Theme_E;
 
+use Theme_E\Users\Person;
+
 class Staff
 {
     protected $members = [];

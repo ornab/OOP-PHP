@@ -1,14 +1,16 @@
 <?php
 
-require 'vendor/autoload.php';
+use Theme_E\Users\Person;
+use Theme_E\Buisiness;
+use Theme_E\Staff;
 
 
-$ornab = new Theme_E\Person ('Ornab Ahmed');
+$ornab = new Person ('Ornab Ahmed');
 
-$staff = new Theme_E\Staff([$ornab]);
+$staff = new Staff([$ornab]);
 
-$theme = new Theme_E\Buisiness($staff);
+$theme = new Buisiness($staff);
 
-$theme->hire(new Theme_E\Person('asif'));
+$theme->hire(new Person('asif'));
 
 var_dump($theme->getStaffMembers());
