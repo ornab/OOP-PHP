@@ -1,4 +1,11 @@
 {
-    
+    "autoload":{
+        
+        "psr-4": {
+            
+            "Theme_E\\": "src"
+        }
+        
+    }
     
 }

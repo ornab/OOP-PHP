@@ -1,5 +1,7 @@
 <?php
 
+namespace Theme_E;
+
 class Person
 {
     

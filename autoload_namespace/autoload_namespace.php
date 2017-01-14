@@ -2,16 +2,12 @@
 
 
 
+$ornab = new Theme_E\Person ('Ornab Ahmed');
 
+$staff = new Theme_E\Staff([$ornab]);
 
+$theme = new Theme_E\Buisiness($staff);
 
-
-$ornab = new Person ('Ornab Ahmed');
-
-$staff = new Staff([$ornab]);
-
-$theme = new Buisiness($staff);
-
-$theme->hire(new Person('asif'));
+$theme->hire(new Theme_E\Person('asif'));
 
 var_dump($theme->getStaffMembers());
